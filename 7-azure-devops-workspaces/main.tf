@@ -21,7 +21,7 @@ variable "resource_group_name" {
 
 variable "location" {
   type    = string
-  default = "eastus"
+  default = "australiaeast"
 }
 
 
@@ -69,6 +69,10 @@ data "template_file" "subnet_prefixes" {
 resource "azurerm_resource_group" "vnet_main" {
   name     = local.full_rg_name
   location = var.location
+
+  tags = {
+    environment = terraform.workspace
+  }
 }
 
 module "vnet-main" {
