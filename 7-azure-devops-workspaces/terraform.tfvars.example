@@ -1,0 +1,8 @@
+resource_group_name = "vnet"
+sec_sub_id = "2eccba2d-8260-44a2-940a-fd03a563c5ea"
+sec_client_id = "041922db-6a93-4e81-85a4-a460512b1d8e"
+sec_tenant_id="39654425-78ae-46e6-8fce-2fb96c4eddb4"
+sec_vnet_name = "security"
+sec_vnet_id = "/subscriptions/2eccba2d-8260-44a2-940a-fd03a563c5ea/resourceGroups/security/providers/Microsoft.Network/virtualNetworks/security"
+sec_resource_group = "security"
+sec_principal_id = "b14eef78-a497-4cc7-8f4d-925b8fc63a4c"
