@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "*********** Create or select workspace"
-WORKSPACECOUNT=$(terraform workspace list | grep -c "$1")
+WORKSPACECOUNT=$(terraform workspace list | grep -c "$WORKSPACENAME")
 echo "WORKSPACECOUNT is $WORKSPACECOUNT"
-echo "The workspace name is $1"
-#if [ WORKSPACECOUNT -eq 0 ] ; then
-echo "Create new workspace $1"
-terraform workspace new "$1"
-#else
-#  echo "Switch to workspace $1"
-#  terraform workspace select "$1" -no-color
-#fi
+echo "The workspace name is $WORKSPACENAME"
+if [ $WORKSPACECOUNT -eq 0 ] ; then
+echo "Create new workspace $WORKSPACENAME"
+terraform workspace new "$WORKSPACENAME"
+else
+  echo "Switch to workspace $WORKSPACENAME"
+  terraform workspace select "$WORKSPACENAME"
+fi
