@@ -29,7 +29,7 @@ variable "naming_prefix" {
 
 variable "location" {
   type    = string
-  default = "eastus"
+  default = "australiaeast"
 }
 
 variable "network_state" {
@@ -66,7 +66,7 @@ data "terraform_remote_state" "networking" {
   config = {
     storage_account_name = var.network_state["sa"]
     container_name       = var.network_state["cn"]
-    key                  = var.network_state["key"]
+    key                  = "${var.network_state["key"]}env:${terraform.workspace}"
     sas_token            = var.network_state["sts"]
   }
 }
