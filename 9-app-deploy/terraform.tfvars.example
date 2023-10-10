@@ -1,8 +1,8 @@
 resource_group_name = "app"
 
 network_state = {
-    "sa" = "itma73503 "
-    "cn" = "terraform-state"
-    "key" = "terraform.tfstate"
-    "sts" = "get-from-one-note-adding-networking-remote-state"
+    "sa" = "STORAGE_ACCOUNT_NAME"
+    "cn" = "CONTAINER_NAME"
+    "key" = "STATE_FILE_KEY"
+    "sts" = "SAS_TOKEN"
 }
