@@ -66,7 +66,7 @@ data "terraform_remote_state" "networking" {
   config = {
     storage_account_name = var.network_state["sa"]
     container_name       = var.network_state["cn"]
-    key                  = "${var.network_state["key"]}env:${terraform.workspace}"
+    key                  = var.network_state["key"]
     sas_token            = var.network_state["sts"]
   }
 }
