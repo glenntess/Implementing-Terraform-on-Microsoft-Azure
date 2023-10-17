@@ -87,10 +87,11 @@ resource "azurerm_resource_group" "app" {
 }
 
 resource "azurerm_availability_set" "app" {
-  name                = "${local.prefix}-aset"
-  location            = azurerm_resource_group.app.location
-  resource_group_name = azurerm_resource_group.app.name
-  managed             = true
+  name                        = "${local.prefix}-aset"
+  location                    = azurerm_resource_group.app.location
+  resource_group_name         = azurerm_resource_group.app.name
+  managed                     = true
+  platform_fault_domain_count = 2
 
   tags = {
     environment = terraform.workspace
